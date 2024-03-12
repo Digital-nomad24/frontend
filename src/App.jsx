@@ -10,7 +10,7 @@ export default function App(){
     <Routes>
       <Route path='/' element={<Suspense fallback={'loading...'}><Signup></Signup></Suspense>}></Route>
       <Route path='/signin' element={<Suspense fallback={'loading...'}><Signin></Signin></Suspense>}></Route>
-      <Route path='https://voluble-trifle-b1239e.netlify.app/signin/dashboard' element={<Suspense fallback={'loading...'}><Dashboard></Dashboard></Suspense>}></Route>
+      <Route path='/dashboard' element={<Suspense fallback={'loading...'}><Dashboard></Dashboard></Suspense>}></Route>
       <Route path='/send' element={<Suspense fallback={'loading...'}><Send></Send></Suspense>}></Route>
     </Routes>
     </BrowserRouter>
