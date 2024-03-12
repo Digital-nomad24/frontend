@@ -32,7 +32,7 @@ export default function Signin(){
               let config = {
                 method: 'get',
                 maxBodyLength: Infinity,
-                url: 'localhost:3000/api/v1/user/signin',
+                url: 'https://backend-theta-blush.vercel.app/api/v1/user/signin',
                 headers: { 
                   'Content-Type': 'application/json'
                 },

@@ -42,7 +42,7 @@ export const fetchStateAtom=atom({
     key:'selectoerkey',
     get:async()=>{
     const token = localStorage.getItem('token')
-    const res=await axios.get('http://localhost:3000/api/v1/account/balance', {
+    const res=await axios.get('https://backend-theta-blush.vercel.app/api/v1/account/balance', {
     headers:{
     'Content-Type': 'application/x-www-form-urlencoded',
     'authorization': `Bearer ${token}`
