@@ -2,6 +2,8 @@ import { useRecoilValue } from "recoil"
 import { Balance } from "../css_components/Balance"
 import Appbar from '../css_components/Appbar'
 import {User} from '../components/user'
+import { selector } from "recoil"
+import { fetchStateAtom } from "./atoms"
 export default function Dashboard(){
     // const balance=useRecoilValue(getB)
     return (
