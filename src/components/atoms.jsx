@@ -51,13 +51,7 @@ export const fetchStateAtom=atom({
   }
   })
   })
-export const getB=selector({
-  key:'selector',
-  get:({get})=>{
-    const balance=get(fetchStateAtom)
-    return balance.balance ;
-  }
-})
+ 
 export const userfilter=atom({
   key:"userfilteratom",
   default:['one']
