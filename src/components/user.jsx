@@ -11,7 +11,7 @@ export function User()
     const [users,setUser]=useRecoilState(userfilter)
     const[filter,setfiltervalue]=useRecoilState(filteratom)
     useEffect(() => {
-        axios.get(`https://backend-theta-blush.vercel.app/api/v1/user/filter?filter=${filter}`)
+        axios.get(`https://backend-6d1q.vercel.app/api/v1/user/filter?filter=${filter}`)
           .then(res => {
             setUser(res.data.user)
           })

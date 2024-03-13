@@ -43,7 +43,7 @@ export default function Send()  {
                     />
                     </div>
                     <button onClick={() => {
-                        axios.post("https://backend-theta-blush.vercel.app/api/v1/account/transfer", {
+                        axios.post("https://backend-6d1q.vercel.app/api/v1/account/transfer", {
                             to:id,
                             ammount:amount
                         }, {
