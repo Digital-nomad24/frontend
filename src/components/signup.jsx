@@ -46,7 +46,7 @@ export default function Signup(){
                 Email:email
               };
               console.log(postData)
-              await axios.post('https://backend-o89b.onrender.com/api/v1/user/signup',postData)
+              await axios.post('https://backend-1-79iw.onrender.com/api/v1/user/signup',postData)
               .then(res=>{
                 console.log(res.data)
                 console.log(res.data.token)
