@@ -6,7 +6,7 @@ const Signin=lazy(()=>import('./components/signin'))
 const Send=lazy(()=>import('./components/send'))
 export default function App(){
   return (<div>
-    <BrowserRouter>
+    <BrowserRouter basename="/myapp">
     <Routes>
       <Route path='/' element={<Suspense fallback={'loading...'}><Signup></Signup></Suspense>}></Route>
       <Route path='/signin' element={<Suspense fallback={'loading...'}><Signin></Signin></Suspense>}></Route>
