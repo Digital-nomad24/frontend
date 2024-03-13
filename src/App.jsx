@@ -8,7 +8,7 @@ export default function App(){
   return (<div>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Suspense fallback={'loading...'}><Signup></Signup></Suspense>}></Route>
+      <Route path='/signup' element={<Suspense fallback={'loading...'}><Signup></Signup></Suspense>}></Route>
       <Route path='/signin' element={<Suspense fallback={'loading...'}><Signin></Signin></Suspense>}></Route>
       <Route path='/dashboard' element={<Suspense fallback={'loading...'}><Dashboard></Dashboard></Suspense>}></Route>
       <Route path='/send' element={<Suspense fallback={'loading...'}><Send></Send></Suspense>}></Route>
