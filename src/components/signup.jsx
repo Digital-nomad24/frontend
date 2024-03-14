@@ -57,7 +57,7 @@ export default function Signup(){
         }}></Button>
         </div>
         <BottomWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />
-      </div>"
+      </div>
 </div>
 </div>
 <br />
