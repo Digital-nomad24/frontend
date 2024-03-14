@@ -10,6 +10,7 @@ export default function Dashboard(){
             <Appbar/>
             <br />
             <h3><Balance value={balance}></Balance></h3>
+            {console.log(balance)}
             {console.log("SEPERATION BTW")}
             <User></User>
         </div>
