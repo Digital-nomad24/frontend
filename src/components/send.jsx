@@ -3,7 +3,6 @@ import axios from "axios";
 import { useRecoilState } from 'recoil';
 import { sendammount } from './atoms';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 export default function Send()  {
     const [searchParams] = useSearchParams();
     const id = searchParams.get("id");
