@@ -3,6 +3,7 @@ import { Balance } from "../css_components/Balance"
 import Appbar from '../css_components/Appbar'
 import { getB } from "./atoms"
 import {User} from '../components/user'
+import { useEffect } from "react"
 export default function Dashboard(){
     const balance=useRecoilValue(getB)
     const token=localStorage.getItem('token')
