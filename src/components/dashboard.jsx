@@ -4,10 +4,13 @@ import Appbar from '../css_components/Appbar'
 import { getB } from "./atoms"
 import {User} from '../components/user'
 import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 export default function Dashboard(){
     const balance=useRecoilValue(getB)
+    const navigate=useNavigate()
     const token=localStorage.getItem('token')
       if(token)
+    
       return (
         <div>
             <Appbar/>
