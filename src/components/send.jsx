@@ -2,6 +2,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from "axios";
 import { useRecoilState } from 'recoil';
 import { sendammount } from './atoms';
+import { useEffect } from 'react';
 
 export default function Send()  {
     const [searchParams] = useSearchParams();
@@ -9,7 +10,9 @@ export default function Send()  {
     const name = searchParams.get("name");
     const [amount, setAmount]=useRecoilState(sendammount);
     const navigate=useNavigate();
-    return <div className="flex justify-center h-screen bg-gray-100">
+    const token=localStorage.getItem('token')
+    if(token)
+    return (<div className="flex justify-center h-screen bg-gray-100">
         <div className="h-full flex flex-col justify-center">
             <div
                 className="border h-min text-card-foreground max-w-md p-4 space-y-8 w-96 bg-white shadow-lg rounded-lg"
@@ -62,5 +65,8 @@ export default function Send()  {
                 </div>
         </div>
       </div>
-    </div>
+    </div>)
+    else 
+    useEffect(()=>{
+    navigate('/signin')})
 }

@@ -5,7 +5,9 @@ import { getB } from "./atoms"
 import {User} from '../components/user'
 export default function Dashboard(){
     const balance=useRecoilValue(getB)
-    return (
+    const token=localStorage.getItem('token')
+      if(token)
+      return (
         <div>
             <Appbar/>
             <br />
@@ -13,4 +15,9 @@ export default function Dashboard(){
             <User></User>
         </div>
     )
+    else
+    useEffect(() => {
+      // Perform navigation when the component mounts
+      navigate('/signin');
+    })
 }
