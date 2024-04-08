@@ -23,7 +23,7 @@ export function User()
         <InputBox label={"enter a name to search your friend"} placeholder={'john'} onChange={(e)=>{
             setfiltervalue(e.target.value)
         }} type="text" />
-            {users.map(e=><DisplaUser key={Math.random()} user={e}/>)}
+            {users.map(e=><DisplayUser key={Math.random()} user={e}/>)}
             </div>
         }
 function DisplayUser({user}){
