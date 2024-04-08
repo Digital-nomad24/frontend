@@ -36,21 +36,6 @@ export const userStateAtom2 = atom({
   key: 'atomuserSastate',
   default:''
 })
-export const fetchStateAtom=atom({
-  key:'fetchState',
-  default:selector({
-    key:'selectoerkey',
-    get:async()=>{
-    const token = localStorage.getItem('token')
-    const res=await axios.get('https://backend-1-79iw.onrender.com/api/v1/account/balance', {
-    headers:{
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'authorization': `Bearer ${token}`
-   }})
-   return res.data
-  }
-  })
-  })
 export const userfilter=atom({
   key:"userfilteratom",
   default:['one']
