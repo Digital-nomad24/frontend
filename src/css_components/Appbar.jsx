@@ -33,8 +33,6 @@ export default function Navbar() {
                   navigate('/signin')
                   localStorage.removeItem('token')
                 }} className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Sign Out</a>
-                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Link 2</a>
-                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Link 3</a>
               </div>
             </div>
           )}
