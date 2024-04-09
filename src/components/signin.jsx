@@ -8,6 +8,7 @@ import { Heading } from "../css_components/Heading"
 import { InputBox } from "../css_components/InputBox"
 import { SubHeading } from "../css_components/SubHeading"
 import { passwordatom,emailatom} from './atoms'
+import { post } from '../../../backend/routes/user'
 export default function Signin(){
     const navigate=useNavigate()
     const [checkvalue,setcheckvalue]=useRecoilState(passwordatom)
@@ -29,6 +30,7 @@ export default function Signin(){
                 password:checkvalue,
                 Email:checkvalue1
               };
+              console.log(postData)
               await axios.post('https://backend-1-79iw.onrender.com/api/v1/user/signin',postData)
               .then(res=>{
                 localStorage.setItem('token', res.data.token);
