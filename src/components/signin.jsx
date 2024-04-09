@@ -20,36 +20,21 @@ export default function Signin(){
         <InputBox placeholder="harkirat@gmail.com" label={"Email"} onChange={(e)=>{
             setcheckvalue1(e.target.value)
         }} />
+        
         <InputBox onChange={(e)=>{
             setcheckvalue(e.target.value)
         }} placeholder="123456" label={"Password"} />
-        <Button label={"submit"} onClick={async ()=>{
-              let data = {
-                Email:checkvalue1,
-                password:checkvalue
+        <Button label="Submit" onClick={async () => {
+            const postData = {
+                password:checkvalue,
+                Email:checkvalue1
               };
-
-              let config = {
-                method: 'get',
-                maxBodyLength: Infinity,
-                url: 'https://backend-1-79iw.onrender.com/api/v1/user/signin',
-                headers: { 
-                  'Content-Type': 'application/json'
-                },
-                data : data
-              };
-              
-              axios.request(config)
-              .then((response) => {
-                console.log(JSON.stringify(response.data))
-                localStorage.setItem('token', `${response.data.token}`);;
+              await axios.post('https://backend-1-79iw.onrender.com/api/v1/user/signin',postData)
+              .then(res=>{
+                localStorage.setItem('token', res.data.token);
               })
-              .catch((error) => {
-                console.log(error);
-              });
-              
-navigate('/dashboard')
-}}></Button>
+              navigate('/dashboard')
+        }}></Button>
         <div className="pt-4">
         </div>
         <BottomWarning label={"Don't have an account?"} buttonText={"Sign up"} to={"/"} />
