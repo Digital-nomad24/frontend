@@ -1,5 +1,5 @@
 
-import {useRecoilState, useRecoilValue,atom} from 'recoil'
+import {useRecoilState} from 'recoil'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 import { BottomWarning } from "../css_components/BottomWarning"
@@ -7,7 +7,7 @@ import { Button } from "../css_components/Button"
 import { Heading } from "../css_components/Heading"
 import { InputBox } from "../css_components/InputBox"
 import { SubHeading } from "../css_components/SubHeading"
-import { passwordatom,emailatom} from './atoms'
+import { passwordatom,emailatom, tokenatom} from './atoms'
 export default function Signin(){
     const navigate=useNavigate()
     const [checkvalue,setcheckvalue]=useRecoilState(passwordatom)
@@ -20,7 +20,6 @@ export default function Signin(){
         <InputBox placeholder="harkirat@gmail.com" label={"Email"} onChange={(e)=>{
             setcheckvalue1(e.target.value)
         }} />
-        
         <InputBox onChange={(e)=>{
             setcheckvalue(e.target.value)
         }} placeholder="123456" label={"Password"} />
@@ -29,6 +28,7 @@ export default function Signin(){
                 password:checkvalue,
                 Email:checkvalue1
               };
+              console.log(postData)
               await axios.post('https://backend-1-79iw.onrender.com/api/v1/user/signin',postData)
               .then(res=>{
                 localStorage.setItem('token', res.data.token);
