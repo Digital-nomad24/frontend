@@ -31,6 +31,7 @@ export default function Signin(){
               console.log(postData)
               await axios.post('https://backend-1-79iw.onrender.com/api/v1/user/signin',postData)
               .then(res=>{
+
                 localStorage.setItem('token', res.data.token);
               })
               navigate('/dashboard')
