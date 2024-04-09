@@ -45,7 +45,7 @@ export default function Send()  {
                     />
                     </div>
                     <button onClick={() => {
-                        axios.post("https://backend-1-79iw.onrender.com/api/v1/account/transfer", {
+                        axios.post("https://backend-one-pied.vercel.app/api/v1/account/transfer", {
                             to:id,
                             ammount:amount
                         }, {

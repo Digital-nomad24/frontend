@@ -11,7 +11,7 @@ export default function Dashboard() {
     const fetchData = async () => {
       try {
         
-        const res = await axios.get('https://backend-1-79iw.onrender.com/api/v1/account/balance', {
+        const res = await axios.get('https://backend-one-pied.vercel.app/api/v1/account/balance', {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'authorization': `Bearer ${token}`
