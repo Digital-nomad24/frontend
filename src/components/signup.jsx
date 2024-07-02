@@ -30,7 +30,7 @@ export default function Signup(){
         <InputBox onChange={(e) => {
           setlastname(e.target.value);
         }} placeholder="Doe" label={"Last Name"} />
-        <InputBox onChange={(e) => {
+        <InputBox prop='email' onChange={(e) => {
           setemail(e.target.value);
         }} placeholder="abc@gmail.com" label={"Email"} />
         <InputBox onChange={(e) => {
