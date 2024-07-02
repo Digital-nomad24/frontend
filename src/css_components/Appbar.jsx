@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
+import axios from "axios";
 export default function Navbar() {
   const navigate=useNavigate()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,7 +35,18 @@ export default function Navbar() {
                   localStorage.removeItem('token')
                 }} className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Sign Out</a>
               </div>
+              <div className="py-1">
+                <a href="#" onClick={async ()=>{
+                  navigate('/signup')
+                  await axios.delete('https://backend-one-pied.vercel.app/api/v1/user/delete',postData)
+              .then(res=>{
+                console.log("deleted");
+                localStorage.removeItem('token')
+              })
+                }} className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Delete Account</a>
+              </div>
             </div>
+            
           )}
         </div>
       </div>
