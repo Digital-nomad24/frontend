@@ -6,7 +6,7 @@ import { User } from '../components/user';
 import { useEffect, useState } from "react";
 import { usernameatom } from "./atoms";
 export default function Dashboard() {
-  const [username]=useRecoilValue(usernameatom)
+  const [username,setusername]=useRecoilState(usernameatom)
   const [balance, setBalance] = useState();
   const token = localStorage.getItem('token');
   useEffect(() => {
