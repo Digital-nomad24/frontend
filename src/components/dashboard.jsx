@@ -4,9 +4,9 @@ import { Balance } from "../css_components/Balance";
 import Appbar from '../css_components/Appbar';
 import { User } from '../components/user';
 import { useEffect, useState } from "react";
-import { displayatom } from "./atoms";
+import { usernameatom } from "./atoms";
 export default function Dashboard() {
-  const [username]=useRecoilValue(displayatom)
+  const [username]=useRecoilValue(usernameatom)
   const [balance, setBalance] = useState();
   const token = localStorage.getItem('token');
   useEffect(() => {
