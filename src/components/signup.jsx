@@ -54,6 +54,7 @@ export default function Signup(){
                 console.log(res.data.token)
                 settoken(res.data.token)
                 localStorage.setItem('token', res.data.token);
+                localStorage.setItem('firstName',username)
               })
               navigate('/dashboard')}
         }}></Button>

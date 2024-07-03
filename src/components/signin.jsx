@@ -34,7 +34,7 @@ export default function Signin(){
               }else{
               await axios.post('https://backend-one-pied.vercel.app/api/v1/user/signin',postData)
               .then(res=>{
-                setusername(res.data.firstName);
+                localStorage.setItem('firstName',res.data.firstName)
                 localStorage.setItem('token', res.data.token);
               })
               navigate('/dashboard')}
