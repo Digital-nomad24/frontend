@@ -33,7 +33,7 @@ export default function Signup(){
         <InputBox prop='email' onChange={(e) => {
           setemail(e.target.value);
         }} placeholder="abc@gmail.com" label={"Email"} />
-        <InputBox onChange={(e) => {
+        <InputBox prop="password" onChange={(e) => {
           setpassword(e.target.value)
         }} placeholder="123456" label={"Password"} />
         <div className="pt-4">
