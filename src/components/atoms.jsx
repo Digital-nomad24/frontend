@@ -3,6 +3,10 @@ export const usernameatom=atom({
     key:'dassad',
     default:''
 })
+export const displayatom=atom({
+  key:'sad',
+  default:''
+})
 export const firstnameatom=atom({
     key:'inputAtom6',
     default:''

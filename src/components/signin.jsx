@@ -7,12 +7,12 @@ import { Button } from "../css_components/Button"
 import { Heading } from "../css_components/Heading"
 import { InputBox } from "../css_components/InputBox"
 import { SubHeading } from "../css_components/SubHeading"
-import { passwordatom,emailatom, usernameatom} from './atoms'
+import { passwordatom,emailatom, displayatom} from './atoms'
 export default function Signin(){
     const navigate=useNavigate()
     const [checkvalue,setcheckvalue]=useRecoilState(passwordatom)
     const [checkvalue1,setcheckvalue1]=useRecoilState(emailatom)
-    const [username,setusernameatom]=useRecoilState(usernameatom)
+    const [username,setusername]=useRecoilState(displayatom)
     return <div className="bg-slate-300 h-screen flex justify-center">
     <div className="flex flex-col justify-center">
       <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
@@ -36,7 +36,8 @@ export default function Signin(){
               await axios.post('https://backend-one-pied.vercel.app/api/v1/user/signin',postData)
               .then(res=>{
                 console.log(res.data.token)
-                setusernameatom(res.data.username);
+                setusername(res.data.firstName);
+                console.log(res.data)
                 localStorage.setItem('token', res.data.token);
               })
               navigate('/dashboard')}
