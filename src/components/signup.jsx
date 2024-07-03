@@ -21,15 +21,15 @@ export default function Signup(){
       <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
         <Heading label={"Sign up"} />
         <SubHeading label={"Enter your infromation to create an account"} />
-        <InputBox onChange={(e) => {
+        <form><InputBox onChange={(e) => {
           setusername(e.target.value);
-        }} placeholder="John" label={"user Name"} />
+        }} placeholder="username" label={"user Name"} />
         <InputBox onChange={(e) => {
           setfirstname(e.target.value);
-        }} placeholder="John" label={"First Name"} />
+        }} placeholder="firstname" label={"First Name"} />
         <InputBox onChange={(e) => {
           setlastname(e.target.value);
-        }} placeholder="Doe" label={"Last Name"} />
+        }} placeholder="lastname" label={"Last Name"} />
         <InputBox prop='email' onChange={(e) => {
           setemail(e.target.value);
         }} placeholder="abc@gmail.com" label={"Email"} />
@@ -45,7 +45,9 @@ export default function Signup(){
                 lastName:lastname,
                 Email:email
               };
-              console.log(postData)
+              if(!postData.username||!postData.Email||!postData.password){
+                {alert("Enter the details")}
+              }else{
               await axios.post('https://backend-one-pied.vercel.app/api/v1/user/signup',postData)
               .then(res=>{
                 console.log(res.data)
@@ -53,9 +55,10 @@ export default function Signup(){
                 settoken(res.data.token)
                 localStorage.setItem('token', res.data.token);
               })
-              navigate('/dashboard')
+              navigate('/dashboard')}
         }}></Button>
         </div>
+        </form>
         <BottomWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />
       </div>
 </div>

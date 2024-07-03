@@ -20,7 +20,7 @@ export default function Signin(){
         <InputBox prop="email" placeholder="abc@gmail.com" label={"Email"} onChange={(e)=>{
             setcheckvalue1(e.target.value)
         }} />
-        <InputBox onChange={(e)=>{
+        <InputBox prop="password" onChange={(e)=>{
             setcheckvalue(e.target.value)
         }} placeholder="123456" label={"Password"} />
         <Button label="Submit" onClick={async () => {
@@ -29,12 +29,14 @@ export default function Signin(){
                 Email:checkvalue1
               };
               console.log(postData)
-              await axios.post('https://backend-one-pied.vercel.app/api/v1/user/signin',postData)
+              if(!postData.Email||!postData.password){
+                {alert("Enter the details")}
+              }else{
+              await axios.post('https://backend-one-pied.vercel.app/api/v1/user/signup',postData)
               .then(res=>{
-
                 localStorage.setItem('token', res.data.token);
               })
-              navigate('/dashboard')
+              navigate('/dashboard')}
         }}></Button>
         <div className="pt-4">
         </div>
