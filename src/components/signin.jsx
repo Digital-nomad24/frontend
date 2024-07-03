@@ -32,7 +32,7 @@ export default function Signin(){
               if(!postData.Email||!postData.password){
                 {alert("Enter the details")}
               }else{
-              await axios.post('https://backend-one-pied.vercel.app/api/v1/user/signup',postData)
+              await axios.post('https://backend-one-pied.vercel.app/api/v1/user/signin',postData)
               .then(res=>{
                 console.log(res.data.token)
                 localStorage.setItem('token', res.data.token);
